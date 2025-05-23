@@ -1,7 +1,7 @@
 {
   "name": "@kne/pay-details",
   "version": "0.1.0",
-  "description": "招聘场景薪资选择",
+  "description": "一个用于薪资/支付范围选择的复合表单组件",
   "syntax": {
     "esmodules": true
   },
