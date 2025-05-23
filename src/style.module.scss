@@ -1,0 +1,19 @@
+.field-label {
+  &:global(.react-form__field-label) {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+
+.currencies-select {
+  &:global(.ant-select.ant-select-single) {
+    width: auto;
+    min-width: 100px;
+  }
+}
+
+.preview {
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
+}

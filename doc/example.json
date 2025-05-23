@@ -1,0 +1,29 @@
+{
+  "isFull": false,
+  "list": [
+    {
+      "title": "这里填写示例标题",
+      "description": "这里填写示例说明",
+      "code": "./base.js",
+      "scope": [
+        {
+          "name": "_PayDetails",
+          "packageName": "@kne/current-lib_pay-details",
+          "importStatement": "import * as _PayDetails from \"@kne/pay-details\""
+        },
+        {
+          "packageName": "@kne/current-lib_pay-details/dist/index.css",
+          "importStatement": "import * as _PayDetails from \"@kne/pay-details/dist/index.css\""
+        },
+        {
+          "name": "_reactFormAntd",
+          "packageName": "@kne/react-form-antd"
+        }
+      ,
+        {
+          "packageName": "@kne/react-form-antd/dist/index.css"
+        }
+      ]
+    }
+  ]
+}
