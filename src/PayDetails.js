@@ -10,9 +10,12 @@ import style from './style.module.scss';
 import classnames from 'classnames';
 import FormatPayDetails from './FormatPayDetails';
 import zhCn from './locale/zh-CN';
-import { createWithIntlProvider, useIntl } from '@kne/react-intl';
+import enUS from './locale/en-US';
+import { createWithIntlProvider, useIntl, localeLoader } from '@kne/react-intl';
 
 const { useDecorator } = hooks;
+
+localeLoader('en-US', enUS, 'pay-details');
 
 const PayDetailsField = createWithIntlProvider(
   'zh-CN',
@@ -48,7 +51,7 @@ const PayDetailsField = createWithIntlProvider(
             });
           }}
           className={style['currencies-select']}
-          placeholder="请选择币种"
+          placeholder={formatMessage({ id: 'pleaseSelectCurrency' })}
           options={currencies.map(code => ({ value: code, label: code }))}
         />
         <Flex flex={1}>
@@ -63,7 +66,7 @@ const PayDetailsField = createWithIntlProvider(
                 });
               }}
               className={'react-form__field-component'}
-              placeholder="最小值"
+              placeholder={formatMessage({ id: 'minimumValue' })}
               min={0}
             />
             <Input
@@ -86,14 +89,14 @@ const PayDetailsField = createWithIntlProvider(
                 });
               }}
               className={'react-form__field-component'}
-              placeholder="最大值"
+              placeholder={formatMessage({ id: 'maximumValue' })}
               min={0}
             />
           </Space.Compact>
         </Flex>
       </Flex>
       <div>
-        <div className={classnames('react-form__field-label', style['field-label'])}>额外薪资说明</div>
+        <div className={classnames('react-form__field-label', style['field-label'])}>{formatMessage({ id: 'salaryDescription' })}</div>
         <Input
           value={get(value, 'description')}
           onChange={e => {
@@ -103,7 +106,7 @@ const PayDetailsField = createWithIntlProvider(
               });
             });
           }}
-          placeholder="请输入对候选人展示的额外薪资说明"
+          placeholder={formatMessage({ id: 'salaryDescriptionPlaceholder' })}
           maxLength={100}
         />
       </div>
